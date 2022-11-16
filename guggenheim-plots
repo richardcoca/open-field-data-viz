@@ -1,0 +1,13 @@
+require(scatterplot3d)
+require(rgl)
+
+mouse <- read.csv("/Users/richardcoca/Library/Containers/com.microsoft.Excel/Data/Desktop/AnimAppVideo51.csv")
+
+head(mouse)
+dim(mouse)
+scatterplot3d(mouse)
+z <- mouse$z
+x <- mouse$x
+y <- mouse$y
+scatterplot3d(x, y, z, highlight.3d = TRUE, col.axis = "black",
+              col.grid = "lightblue", main = "Open field test results ALG13 Q7", pch = 20)
