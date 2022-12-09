@@ -1,0 +1,18 @@
+install.packages("magrittr") # package installations are only needed the first time you use it
+install.packages("dplyr")    # alternative installation of the %>%
+library(magrittr) # needs to be run every time you start R and want to use %>%
+library(dplyr)    # alternatively, this also loads %>%
+
+# Load the required packages
+library(tidyverse)
+library(plotly)
+
+# Read the data from the CSV file into a data frame
+df <- read.csv("/Users/richardcoca/Library/Containers/com.microsoft.Excel/Data/Desktop/img_0084.csv")
+
+# Create a three-dimensional scatter plot using the x, y, and z columns from the data frame
+plot_ly(df, x = ~x, y = ~y, z = ~z, type = "scatter3d") %>%
+  layout(scene = list(xaxis = list(title = "x"),
+                      yaxis = list(title = "y"),
+                      zaxis = list(title = "frame")))
+
