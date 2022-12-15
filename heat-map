@@ -1,0 +1,5 @@
+df <- read.csv("/Users/YourFileHere.csv")
+
+smoothScatter(x, y, transformation = function(x) x ^ 0.4,
+              colramp = colorRampPalette(c("#000099", "#00FEFF", "#45FE4F",
+                                           "#FCFF00", "#FF9400", "#FF3100")))
